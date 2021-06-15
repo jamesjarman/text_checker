@@ -1,4 +1,4 @@
-import com.jarman.WordExtractor;
+import com.jarman.extract.text.WordExtractor;
 import org.junit.Test;
 
 import java.util.Arrays;

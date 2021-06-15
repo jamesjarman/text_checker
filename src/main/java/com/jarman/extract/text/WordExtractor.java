@@ -1,4 +1,4 @@
-package com.jarman;
+package com.jarman.extract.text;
 
 import java.io.File;
 import java.io.FileNotFoundException;
