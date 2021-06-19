@@ -9,7 +9,7 @@ public class FilePathConstants {
     public static final String EMPTY = "src/main/resources/empty_file.txt";
     public static final String NON_EXISTENT_FILE = "src/main/resources/non_existent_file.txt";
     public static final String ALLOWLIST = "src/main/resources/allowlist.csv";
-    public static final String RESULTS = "src/main/resources/results.txt";
+    public static final String RESULTS_FILE = "src/main/resources/results.txt";
     public static final String BLACKLIST = "src/main/resources/blacklist.txt";
 
 

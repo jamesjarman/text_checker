@@ -1,3 +1,4 @@
+import com.jarman.extract.text.Extractor;
 import com.jarman.extract.text.WordExtractor;
 import org.junit.Test;
 
@@ -12,7 +13,7 @@ public class WordExtractorTest {
 
     @Test
     public void testWordsAreReadFromAFile() {
-        WordExtractor extractor = new WordExtractor(LOREM);
+        Extractor extractor = new WordExtractor(LOREM);
         List<String> allWords = extractor.getAllWords();
         assertFalse(allWords.isEmpty());
     }

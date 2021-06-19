@@ -1,21 +1,18 @@
 package com.jarman.load;
 
-import com.jarman.pojos.ProblematicWord;
-
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 
-import static com.jarman.FilePathConstants.RESULTS;
+import static com.jarman.FilePathConstants.RESULTS_FILE;
 
 public class TextFileResultsWriter {
 
 
-    private List<ProblematicWord> problematicWords;
+    private String results;
     private String fileName;
 
-    public TextFileResultsWriter(List<ProblematicWord> problematicWords, String fileName) {
-        this.problematicWords = problematicWords;
+    public TextFileResultsWriter(String results, String fileName) {
+        this.results = results;
         this.fileName = fileName;
     }
 
@@ -23,7 +20,7 @@ public class TextFileResultsWriter {
     public void writeResultsToFile() {
         FileWriter myWriter = null;
         try {
-            myWriter = new FileWriter(RESULTS);
+            myWriter = new FileWriter(RESULTS_FILE);
             // TODO add the date to the filename?
 
         } catch (IOException e) {
@@ -31,9 +28,8 @@ public class TextFileResultsWriter {
         }
         try {
             assert myWriter != null;
-            for (ProblematicWord problematicWord : problematicWords) {
-                myWriter.write("You may want to consider replacing " + problematicWord.getOriginalWord() + " with " + problematicWord.getAlternativeWord() + " because " + problematicWord.getExplanation());
-            }
+                myWriter.write(results);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

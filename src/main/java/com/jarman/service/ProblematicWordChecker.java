@@ -4,6 +4,7 @@ import com.jarman.pojos.ProblematicWord;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public final class ProblematicWordChecker {
 
@@ -12,12 +13,13 @@ public final class ProblematicWordChecker {
         List<ProblematicWord> suggestionsList = new ArrayList<>();
         for (String word : words) {
             for (ProblematicWord problematicWord : problematicWords) {
-                if (problematicWord.getOriginalWord().equals(word)) {
+                if (problematicWord.getOriginalWord().equalsIgnoreCase(word)) {
                     suggestionsList.add(problematicWord);
                 }
             }
+                   }
 
-        } return suggestionsList;
+        return suggestionsList;
     }
 
 }
