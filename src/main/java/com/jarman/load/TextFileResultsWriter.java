@@ -3,13 +3,11 @@ package com.jarman.load;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static com.jarman.FilePathConstants.RESULTS_FILE;
-
 public class TextFileResultsWriter {
 
 
-    private String results;
-    private String fileName;
+    private final String results;
+    private final String fileName;
 
     public TextFileResultsWriter(String results, String fileName) {
         this.results = results;
@@ -20,7 +18,7 @@ public class TextFileResultsWriter {
     public void writeResultsToFile() {
         FileWriter myWriter = null;
         try {
-            myWriter = new FileWriter(RESULTS_FILE);
+            myWriter = new FileWriter(fileName);
             // TODO add the date to the filename?
 
         } catch (IOException e) {
@@ -28,7 +26,7 @@ public class TextFileResultsWriter {
         }
         try {
             assert myWriter != null;
-                myWriter.write(results);
+            myWriter.write(results);
 
         } catch (IOException e) {
             e.printStackTrace();

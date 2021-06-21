@@ -3,6 +3,8 @@ package com.jarman.extract.text;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class WordExtractor implements Extractor{
@@ -27,8 +29,9 @@ public class WordExtractor implements Extractor{
             System.out.println("There was exception" + e);
         }
         if (content != null) {
-            words = Arrays.asList(content.split(" "));
+            words = Arrays.asList(content.replaceAll("[\\p{P}&&[^\u0027]]", "").toLowerCase().split("\\s+"));
         }
+
         return words;
     }
 }

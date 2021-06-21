@@ -10,10 +10,12 @@ import static org.junit.Assert.assertEquals;
 public class ProblematicWordsDbReaderTest {
 
     @Test
-    public void testHappyPath() {
+    public void testReaderReturnsAllWordsFromDb() {
         ProblematicWordReader problematicWordReader = new ProblematicWordDbReader();
         List<ProblematicWord> problematicWordList = problematicWordReader.getAllProblematicWords();
         ProblematicWord problematicWord = problematicWordList.get(0);
-        assertEquals(problematicWord.getOriginalWord(),"blacklist");
+        assertEquals(problematicWord.getOriginalWord(), "blacklist");
+        assertEquals(problematicWordList.size(), 2);
     }
+
 }

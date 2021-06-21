@@ -1,5 +1,8 @@
+import com.jarman.extract.data.ProblematicWordCsvReader;
+import com.jarman.extract.data.ProblematicWordReader;
 import com.jarman.extract.text.Extractor;
 import com.jarman.extract.text.WordExtractor;
+import com.jarman.pojos.ProblematicWord;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -37,6 +40,14 @@ public class WordExtractorTest {
         WordExtractor extractor = new WordExtractor(LOREM);
         List<String> allWords = extractor.getAllWords();
         List<String> expectedWords = Arrays.asList("Lorem", "etc");
+        assertEquals(allWords,expectedWords);
+    }
+
+    @Test
+    public void testThatPunctuationIsIgnored() {
+        WordExtractor extractor = new WordExtractor(BLACKLIST_WITH_COMMAS);
+        List<String> allWords = extractor.getAllWords();
+        List<String> expectedWords = Arrays.asList("you're", "on","the", "blacklist", "so", "you", "can't", "come", "in");
         assertEquals(allWords,expectedWords);
     }
 

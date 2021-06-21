@@ -21,7 +21,7 @@ public class ProblematicWordDbReader implements ProblematicWordReader {
         Connection conn = null;
         Statement stmt = null;
         try {
-            // TODO move this somewhere else and pass in the connection
+            // TODO move this somewhere else and pass in the connection. Use Spring?
             Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();

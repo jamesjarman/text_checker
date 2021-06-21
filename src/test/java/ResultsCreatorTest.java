@@ -66,6 +66,5 @@ public class ResultsCreatorTest {
 
     }
 
-    // TODO test for punctuation, other word forms...
 
 }
