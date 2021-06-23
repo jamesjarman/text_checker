@@ -39,7 +39,7 @@ public class WordExtractorTest {
     public void testExpectedWordsAreExtracted() {
         WordExtractor extractor = new WordExtractor(LOREM);
         List<String> allWords = extractor.getAllWords();
-        List<String> expectedWords = Arrays.asList("Lorem", "etc");
+        List<String> expectedWords = Arrays.asList("lorem", "etc");
         assertEquals(allWords,expectedWords);
     }
 

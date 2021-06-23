@@ -60,7 +60,7 @@ public class ResultsCreatorTest {
 
             ResultsCreator resultsCreator = new ResultsCreator(problematicWords);
             String actualResults = resultsCreator.getResults();
-            String expectedResults = "There were 2 potentially problematic words in your text. You may want to consider replacing" +
+            String expectedResults = "There was 1 potentially problematic word in your text. You may want to consider replacing" +
                     " blacklist with denylist because you may want to avoid associating black/white with bad/good.";
             assertEquals(expectedResults,actualResults);
 
